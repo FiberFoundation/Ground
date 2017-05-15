@@ -66,18 +66,10 @@ function updatePackage() {
 console.log(chalkSuccess('Dependencies successfully installed.'));
 console.log(chalkWarning("WARNING:  Preparing to delete local git repository..."));
 
-prompt.get([{name: 'deleteGit', description: "Delete the git repository?  [Y/n]"}], function(err, result) {
-  var deleteGit = result.deleteGit.toUpperCase();
-  if (err) process.exit(1);
-  if (deleteGit.match(/^N.*/)) updatePackage();
-  else {
-    // remove the original git repository
-    rimraf('.git', function(error) {
-      if (error) throw new Error(error);
-      console.log(chalkSuccess('Original Git repository removed.\n'));
-      console.log(chalkProcessing('Initializing new git repository...'));
-      childProcess.exec('git init');
-      updatePackage();
-    });
-  }
+// remove the original git repository
+rimraf('.git', function(error) {
+  if (error) throw new Error(error);
+  console.log(chalkProcessing('Initializing new git repository...'));
+  childProcess.exec('git init');
+  updatePackage();
 });

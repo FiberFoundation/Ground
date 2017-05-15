@@ -1,6 +1,6 @@
 {
   "name": "fiber-platform",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fiber platform",
   "engines": {
     "npm": ">=6"

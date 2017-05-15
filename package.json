@@ -7,7 +7,7 @@
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
-    "setup": "npm install",
+    "setup": "babel-node ./tools/setup.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
@@ -67,6 +67,7 @@
     "mockdate": "2.0.1",
     "nib": "1.1.2",
     "node-sass": "^4.5.2",
+    "npm-run": "4.1.2",
     "npm-run-all": "3.1.2",
     "opn-cli": "^3.1.0",
     "postcss-loader": "1.2.1",

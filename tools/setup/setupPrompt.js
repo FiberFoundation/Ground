@@ -8,19 +8,11 @@ module.exports = [
              'underscore, and tilde; cannot begin with period or underscore.'
   },
   {
-    name: 'version',
-    description: 'Version (default: 0.0.1)'
-  },
-  {
     name: 'author',
     description: 'Author'
   },
   {
     name: 'license',
     description: 'License (default: MIT)'
-  },
-  {
-    name: 'description',
-    description: 'Project description'
   }
 ];

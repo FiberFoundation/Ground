@@ -18,10 +18,10 @@ function updatePackage() {
     // default values provided for fields that will cause npm to complain if left empty
     const responses = [
       {key: 'name', value: result.projectName || 'project'},
-      {key: 'version', value: result.version || '0.0.1'},
+      {key: 'version', value: '0.0.1'},
       {key: 'author', value: result.author || 'Developer'},
       {key: 'license', value: result.license || 'MIT'},
-      {key: 'description', value: result.description},
+      {key: 'description', value: ''},
       // simply use an empty URL here to clear the existing repo URL
       {key: 'url', value: ''}
     ];
@@ -55,24 +55,17 @@ function updatePackage() {
       silent: true
     });
 
-    installDependencies();
-    //      rimraf('./tools/setup', function(error) {
-    //        if (error) throw new Error(error);
-    //      });
+    console.log(chalkProcessing('Cleaning up...'));
+    rimraf('./tools/setup', function(error) {
+      if (error) throw new Error(error);
+      console.log(chalkSuccess('\nSetup complete!\n'));
+    });
   });
 }
 
-function installDependencies() {
-  console.log(chalkProcessing('Installing dependencies...'));
-
-  childProcess.exec('npm install', function(error) {
-    if (error) throw new Error(error);
-    console.log(chalkSuccess('Dependencies successfully installed.'));
-    console.log(chalkSuccess('\nSetup complete!\n'));
-  });
-}
-
+console.log(chalkSuccess('Dependencies successfully installed.'));
 console.log(chalkWarning("WARNING:  Preparing to delete local git repository..."));
+
 prompt.get([{name: 'deleteGit', description: "Delete the git repository?  [Y/n]"}], function(err, result) {
   var deleteGit = result.deleteGit.toUpperCase();
   if (err) process.exit(1);
@@ -81,7 +74,8 @@ prompt.get([{name: 'deleteGit', description: "Delete the git repository?  [Y/n]"
     // remove the original git repository
     rimraf('.git', function(error) {
       if (error) throw new Error(error);
-      console.log(chalkSuccess('Original Git repository removed.\nInitializing new git repository.'));
+      console.log(chalkSuccess('Original Git repository removed.\n'));
+      console.log(chalkProcessing('Initializing new git repository...'));
       childProcess.exec('git init');
       updatePackage();
     });

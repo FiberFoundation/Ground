@@ -1,7 +1,7 @@
 {
-  "name": "fiber-platform",
-  "version": "0.0.5",
-  "description": "Fiber platform",
+  "name": "fiber/ground",
+  "version": "0.0.6",
+  "description": "Fiber Ground",
   "engines": {
     "npm": ">=6"
   },

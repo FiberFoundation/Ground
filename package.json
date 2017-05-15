@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Fiber platform",
   "engines": {
-    "npm": ">=7"
+    "npm": ">=6"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",

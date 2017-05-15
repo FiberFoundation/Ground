@@ -1,4 +1,4 @@
-#Fiber Platform
+# Fiber Platform
 ## Get Started
 1. **Initial Machine Setup**. First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/coryhouse/react-slingshot#initial-machine-setup).
 2. **Clone the project**. `git clone https://github.com/FiberFoundation/FiberPlatform`.

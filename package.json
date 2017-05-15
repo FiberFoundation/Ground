@@ -1,13 +1,13 @@
 {
   "name": "fiber-platform",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Fiber platform",
   "engines": {
     "npm": ">=6"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
-    "setup": "node ./tools/setup/process.js",
+    "setup": "npm i && node ./tools/setup/process.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",

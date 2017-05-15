@@ -1,14 +1,14 @@
 /* eslint-disable no-var */
 /* eslint-disable no-console */
-var chalk = require('chalk');
-var chalkSuccess = chalk.green;
-var chalkProcessing = chalk.blue;
-var chalkWarning = chalk.yellow;
-var rimraf = require('rimraf');
-var childProcess = require('child_process');
-var replace = require("replace");
-var prompt = require("prompt");
-var prompts = require('./setupPrompt');
+const chalk = require('chalk');
+const chalkSuccess = chalk.green;
+const chalkProcessing = chalk.blue;
+const chalkWarning = chalk.yellow;
+const rimraf = require('rimraf');
+const childProcess = require('child_process');
+const replace = require("replace");
+const prompt = require("prompt");
+const prompts = require('./setupPrompt');
 
 prompt.start();
 
